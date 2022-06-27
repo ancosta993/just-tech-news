@@ -80,12 +80,12 @@ router.get('/post/:id', (req, res) => {
    })
       .then(dbPostData => {
          if(!dbPostData){
-            res.status(404).json({ message:'No post found with this id '});
+            res.status(404).json({ message:'No post found with this id'});
             return;
          }
          // serialize the data
          const post = dbPostData.get({plain: true});
-
+     
          // pass data to template
          res.render('single-post', {post});
       })
